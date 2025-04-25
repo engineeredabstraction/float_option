@@ -6,9 +6,9 @@ maintainer: ["Stefan Muenzel <source@s.muenzel.net>"]
 authors: ["Stefan Muenzel <source@s.muenzel.net>"]
 license: "MPL-2.0"
 tags: ["float"]
-homepage: "https://github.com/smuenzel/float_option"
+homepage: "https://github.com/engineeredabstraction/float_option"
 doc: "https://url/to/documentation"
-bug-reports: "https://github.com/smuenzel/float_option/issues"
+bug-reports: "https://github.com/engineeredabstraction/float_option/issues"
 depends: [
   "dune" {>= "3.18"}
   "ocaml"
@@ -30,5 +30,5 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/smuenzel/float_option.git"
+dev-repo: "git+https://github.com/engineeredabstraction/float_option.git"
 x-maintenance-intent: ["(latest)"]

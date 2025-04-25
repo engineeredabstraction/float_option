@@ -5,7 +5,7 @@
 (generate_opam_files true)
 
 (source
- (github smuenzel/float_option))
+ (github engineeredabstraction/float_option))
 
 (authors "Stefan Muenzel <source@s.muenzel.net>")
 
