@@ -5,7 +5,7 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github smuenzel/float_option))
 
 (authors "Stefan Muenzel <source@s.muenzel.net>")
 
@@ -19,7 +19,7 @@
  (name float_option)
  (synopsis "A float option library")
  (description "A float option library with an efficient representation")
- (depends ocaml)
+ (depends ocaml ppx_sexp_conv ppx_optional)
  (tags
   (float)))
 
