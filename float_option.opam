@@ -7,7 +7,6 @@ authors: ["Stefan Muenzel <source@s.muenzel.net>"]
 license: "MPL-2.0"
 tags: ["float"]
 homepage: "https://github.com/engineeredabstraction/float_option"
-doc: "https://url/to/documentation"
 bug-reports: "https://github.com/engineeredabstraction/float_option/issues"
 depends: [
   "dune" {>= "3.18"}

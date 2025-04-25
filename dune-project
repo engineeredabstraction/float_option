@@ -13,8 +13,6 @@
 
 (license MPL-2.0)
 
-(documentation https://url/to/documentation)
-
 (package
  (name float_option)
  (synopsis "A float option library")
