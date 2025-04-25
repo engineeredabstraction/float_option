@@ -1,3 +1,6 @@
+(* SPDX-License-Identifier: MPL-2.0
+ * SPDX-FileCopyrightText: (c) 2025 Stefan Muenzel
+ *)
 open Sexplib0
 open Sexplib0.Sexp_conv
 
