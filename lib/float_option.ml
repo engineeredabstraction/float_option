@@ -52,6 +52,19 @@ let value ~default t =
   | None -> default
   | Some x -> x
 
+let equal a b =
+  match%optional a, b with
+  | None, None -> true
+  | Some x, Some y -> Float.equal x y
+  | _ -> false
+
+let compare a b =
+  match%optional a, b with
+  | None, None -> 0
+  | None, Some _ -> -1
+  | Some _, None -> 1
+  | Some x, Some y -> Float.compare x y
+
 let sexp_of_t (t : t) =
   match%optional t with
   | None -> Sexp.Atom "None"
@@ -63,16 +76,49 @@ let t_of_sexp (s : Sexp.t) =
   | _ -> some ([%of_sexp: float] s)
 
 module Array = struct
-  module A = Stdlib.Float.Array
+  module A = Stdlib.Float.ArrayLabels
   type t = floatarray
 
+  let length = A.length
+  let get = A.get
+  let set = A.set
+  let make = A.make
+  let create = A.create
+  let init = A.init
+
+  let append = A.append
+  let concat = A.concat
+  let sub = A.sub
+  let copy = A.copy
+  let fill = A.fill
+  let blit = A.blit
+
+  let iter = A.iter
+  let iteri = A.iteri
+  let map = A.map
+  let map_inplace = A.map_inplace
+  let mapi = A.mapi
+  let mapi_inplace = A.mapi_inplace
+  let fold_left = A.fold_left
+  let fold_right = A.fold_right
+
+  let iter2 = A.iter2
+  let map2 = A.map2
+
+  let for_all = A.for_all
+  let exists = A.exists
+  let mem v t = A.exists ~f:(fun x -> equal x v) t 
+
+  let to_list = A.to_list
+  let of_list = A.of_list
+
   let sexp_of_t (t : t) =
-    A.map_to_array sexp_of_t t
+    A.map_to_array ~f:sexp_of_t t
     |> [%sexp_of: Sexp.t array]
 
   let t_of_sexp (s : Sexp.t) =
     [%of_sexp: Sexp.t array] s
-    |> A.map_from_array t_of_sexp
+    |> A.map_from_array ~f:t_of_sexp
 
   let of_option_list (l : float option list) =
     List.map of_option l
@@ -80,7 +126,7 @@ module Array = struct
 
   let of_option_array_map (a : 'a option array) ~f =
     A.map_from_array
-      (function
+      ~f:(function
         | None -> none
         | Some x -> some (f x))
       a
