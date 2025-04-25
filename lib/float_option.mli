@@ -8,8 +8,27 @@ val some : float -> t
 
 val value : default:float -> t -> float
 
-val ( + ) : t -> t -> t
-val ( - ) : t -> t -> t
+val zero : t
+val one : t
+val minus_one : t
+
+val pi : t
+
+val epsilon_float : t
+
+val max_finite_value : t
+
+module Infix : sig
+  val ( + ) : t -> t -> t
+  val ( - ) : t -> t -> t
+  val ( * ) : t -> t -> t
+  val ( / ) : t -> t -> t
+  val ( % ) : t -> t -> t
+  val ( ** ) : t -> t -> t
+  val ( ~- ) : t -> t
+end
+
+include module type of Infix
 
 module Optional_syntax : sig
   module Optional_syntax : sig

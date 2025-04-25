@@ -11,7 +11,7 @@
 
 (maintainers "Stefan Muenzel <source@s.muenzel.net>")
 
-(license LICENSE)
+(license MPL-2.0)
 
 (documentation https://url/to/documentation)
 

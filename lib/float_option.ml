@@ -13,8 +13,27 @@ let of_option = function
   | None -> none
   | Some x -> some x
 
-let ( + ) = ( +. )
-let ( - ) = ( -. )
+let zero = 0.0
+let one = 1.0
+let minus_one = -1.0
+
+let pi = Float.pi
+
+let epsilon_float = Float.epsilon
+
+let max_finite_value = Float.max_float
+
+module Infix = struct
+  let ( + ) = ( +. )
+  let ( - ) = ( -. )
+  let ( * ) = ( *. )
+  let ( / ) = ( /. )
+  let ( % ) = ( mod_float )
+  let ( ** ) = ( ** )
+  let ( ~- ) = ( ~-. )
+end
+
+include Infix
 
 module Optional_syntax = struct
   module Optional_syntax = struct

@@ -4,7 +4,7 @@ synopsis: "A float option library"
 description: "A float option library with an efficient representation"
 maintainer: ["Stefan Muenzel <source@s.muenzel.net>"]
 authors: ["Stefan Muenzel <source@s.muenzel.net>"]
-license: "LICENSE"
+license: "MPL-2.0"
 tags: ["float"]
 homepage: "https://github.com/smuenzel/float_option"
 doc: "https://url/to/documentation"
