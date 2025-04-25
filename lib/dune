@@ -1,0 +1,5 @@
+(library
+ (public_name float_option)
+ (name float_option)
+ (preprocess (pps ppx_sexp_conv ppx_optional))
+ )
