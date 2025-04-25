@@ -17,7 +17,7 @@
  (name float_option)
  (synopsis "A float option library")
  (description "A float option library with an efficient representation")
- (depends ocaml ppx_sexp_conv ppx_optional)
+ (depends (ocaml (>= 5.1.0)) ppx_sexp_conv ppx_optional)
  (tags
   (float)))
 
