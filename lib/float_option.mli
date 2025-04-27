@@ -52,6 +52,8 @@ module Array : sig
   val length : t -> int
   val get : t -> int -> value
   val set : t -> int -> value -> unit
+  val unsafe_get : t -> int -> value
+  val unsafe_set : t -> int -> value -> unit
   val make : int -> value -> t
   val create : int -> t
   val init : int -> f:(int -> value) -> t
