@@ -48,6 +48,7 @@ module Array : sig
   type t = private Float.Array.t [@@deriving sexp]
 
   val all_some : t -> bool
+  val all_none : t -> bool
 
   val length : t -> int
   val get : t -> int -> value

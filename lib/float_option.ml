@@ -80,6 +80,7 @@ module Array = struct
   type t = floatarray
 
   let all_some = A.for_all ~f:(fun x -> not (Optional_syntax.is_none x))
+  let all_none = A.for_all ~f:Optional_syntax.is_none
   let unsafe_to_floatarray (a : t) = a
 
   let to_floatarray (a : t) =
