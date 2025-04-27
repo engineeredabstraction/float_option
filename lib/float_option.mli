@@ -47,6 +47,8 @@ module Array : sig
   type value := t
   type t = private Float.Array.t [@@deriving sexp]
 
+  val all_some : t -> bool
+
   val length : t -> int
   val get : t -> int -> value
   val set : t -> int -> value -> unit
@@ -82,4 +84,7 @@ module Array : sig
 
   val of_option_list : float option list -> t
   val of_option_array_map : 'a option array -> f:('a -> float) -> t
+
+  val unsafe_to_floatarray : t -> Float.Array.t
+  val to_floatarray : t -> Float.Array.t option
 end

@@ -79,6 +79,14 @@ module Array = struct
   module A = Stdlib.Float.ArrayLabels
   type t = floatarray
 
+  let all_some = A.for_all ~f:(fun x -> not (Optional_syntax.is_none x))
+  let unsafe_to_floatarray (a : t) = a
+
+  let to_floatarray (a : t) =
+    if all_some a
+    then Some (unsafe_to_floatarray a)
+    else None
+
   let length = A.length
   let get = A.get
   let set = A.set
