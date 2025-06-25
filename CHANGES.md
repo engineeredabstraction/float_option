@@ -1,4 +1,4 @@
-## Development version
+## 0.0.3
 - Add unsafe_get/unsafe_set
 - Add conversion to floatarray
 - Add all_none
